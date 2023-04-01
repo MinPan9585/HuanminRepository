@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += new Vector3(0, 0, 0.01f);
-            // transform.position = transform.position + new Vector3(0, 0, 0.1f);
+            // transform.position = transform.position + new Vector3(0, 0, 0.01f);
         }
     }
 }
