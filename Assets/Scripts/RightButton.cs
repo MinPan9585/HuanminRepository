@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class RightButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject workTable;
+    public GameObject slide;
+    public float speed;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+
+            slide.transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+            float xPos = slide.transform.position.x;
+            xPos = Mathf.Clamp(xPos, 1f, 4.5f);
+            slide.transform.position = new Vector3(xPos, slide.transform.position.y, slide.transform.position.z);
+        }
     }
 }
