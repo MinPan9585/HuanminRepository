@@ -7,7 +7,7 @@ public class CarPart : MonoBehaviour
     public string partName;
     public bool canPickUpP1 = false;
     public bool canPickUpP2 = false;
-    public GameObject player1;
+    GameObject player1;
     private GameObject player2;
 
     private void Start()
