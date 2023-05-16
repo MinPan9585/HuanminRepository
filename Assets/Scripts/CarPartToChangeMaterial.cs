@@ -10,6 +10,10 @@ public class CarPartToChangeMaterial : MonoBehaviour
     private MeshRenderer meshRend;
     private GameObject player1;
     private GameObject player2;
+    private void Awake()
+    {
+        canAssemble = false;
+    }
     void Start()
     {
         meshRend = GetComponent<MeshRenderer>();
@@ -28,6 +32,7 @@ public class CarPartToChangeMaterial : MonoBehaviour
             if(other.GetComponent<CarPart>().partName == partName)
             {
                 canAssemble = true;
+                print("can assemble to true");
             }
         }
     }
@@ -43,6 +48,7 @@ public class CarPartToChangeMaterial : MonoBehaviour
             if (other.GetComponent<CarPart>().partName == partName)
             {
                 canAssemble = false;
+                print("can assemble to false");
             }
         }
     }
@@ -55,6 +61,7 @@ public class CarPartToChangeMaterial : MonoBehaviour
                 return;
             meshRend.material = matToChange;
             Destroy(player1.transform.GetChild(0).gameObject);
+            canAssemble = false;
             //register
         }
         if (canAssemble && Input.GetKeyDown(KeyCode.Space))
@@ -63,6 +70,8 @@ public class CarPartToChangeMaterial : MonoBehaviour
                 return;
             meshRend.material = matToChange;
             Destroy(player2.transform.GetChild(0).gameObject);
+            canAssemble = false;
+            Debug.Log("triggeredddd");
             //register
         }
     }

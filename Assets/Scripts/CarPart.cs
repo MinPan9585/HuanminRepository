@@ -9,7 +9,11 @@ public class CarPart : MonoBehaviour
     public bool canPickUpP2 = false;
     GameObject player1;
     private GameObject player2;
-
+    private void Awake()
+    {
+        canPickUpP1 = false;
+        canPickUpP2 = false;
+    }
     private void Start()
     {
         player1 = GameObject.Find("Player1");
@@ -47,10 +51,12 @@ public class CarPart : MonoBehaviour
         if(canPickUpP1 && Input.GetKeyDown(KeyCode.Keypad0))
         {
             this.transform.SetParent(player1.transform);
+            canPickUpP1 = false;
         }
         if (canPickUpP2 && Input.GetKeyDown(KeyCode.Space))
         {
             this.transform.SetParent(player2.transform);
+            canPickUpP2 = false;
         }
     }
 }
