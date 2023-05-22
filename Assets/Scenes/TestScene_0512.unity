@@ -1177,14 +1177,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389835955}
-  m_LocalRotation: {x: 0.3509049, y: -0, z: -0, w: 0.93641114}
-  m_LocalPosition: {x: 0, y: 12.63, z: -11.59}
+  m_LocalRotation: {x: 0.5065164, y: -0, z: -0, w: 0.8622304}
+  m_LocalPosition: {x: 0, y: 19.92, z: -7.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 41.085, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60.864, y: 0, z: 0}
 --- !u!114 &389835959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2984,7 +2984,6 @@ MonoBehaviour:
   partName: CarRoof
   canPickUpP1: 0
   canPickUpP2: 0
-  player1: {fileID: 0}
 --- !u!1001 &1483582329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5100,7 +5099,6 @@ MonoBehaviour:
   partName: CarShell
   canPickUpP1: 0
   canPickUpP2: 0
-  player1: {fileID: 0}
 --- !u!135 &1962853605
 SphereCollider:
   m_ObjectHideFlags: 0
