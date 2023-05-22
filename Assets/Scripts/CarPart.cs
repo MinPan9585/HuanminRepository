@@ -5,6 +5,7 @@ using UnityEngine;
 public class CarPart : MonoBehaviour
 {
     public string partName;
+    public int assembleSequence;
     public bool canPickUpP1 = false;
     public bool canPickUpP2 = false;
     GameObject player1;
@@ -48,12 +49,12 @@ public class CarPart : MonoBehaviour
 
     private void Update()
     {
-        if(canPickUpP1 && Input.GetKeyDown(KeyCode.Keypad0))
+        if(canPickUpP1 && Input.GetKeyDown(KeyCode.Keypad0) && GameManager.phase == assembleSequence)
         {
             this.transform.SetParent(player1.transform);
             canPickUpP1 = false;
         }
-        if (canPickUpP2 && Input.GetKeyDown(KeyCode.Space))
+        if (canPickUpP2 && Input.GetKeyDown(KeyCode.Space) && GameManager.phase == assembleSequence)
         {
             this.transform.SetParent(player2.transform);
             canPickUpP2 = false;

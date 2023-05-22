@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static int score = 0;
+    public static int phase = 0;
+
+    private void Update()
+    {
+        if (score == 14)
+        {
+            phase = 1;
+        }
+        if(score == 18)
+        {
+            phase = 2;
+            //show next level btn
+        }
+    }
+
     //public bool isPaused = false;
     public AudioSource bgm;
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CarPartToChangeMaterial : MonoBehaviour
 {
     public string partName;
+    public int assembleSequence;
     public bool canAssemble = false;
     public Material matToChange;
     private MeshRenderer meshRend;
@@ -63,6 +64,7 @@ public class CarPartToChangeMaterial : MonoBehaviour
             Destroy(player1.transform.GetChild(0).gameObject);
             canAssemble = false;
             //register
+            GameManager.score++;
         }
         if (canAssemble && Input.GetKeyDown(KeyCode.Space))
         {
@@ -73,6 +75,7 @@ public class CarPartToChangeMaterial : MonoBehaviour
             canAssemble = false;
             Debug.Log("triggeredddd");
             //register
+            GameManager.score++;
         }
     }
 }
