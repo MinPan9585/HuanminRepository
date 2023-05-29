@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static int score = 0;
     public static int phase = 0;
+    public GameObject nextLevelBtn;
 
     private void Update()
     {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
         {
             phase = 2;
             //show next level btn
+            nextLevelBtn.SetActive(true);
         }
     }
 
