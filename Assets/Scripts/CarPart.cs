@@ -10,10 +10,13 @@ public class CarPart : MonoBehaviour
     public bool canPickUpP2 = false;
     GameObject player1;
     private GameObject player2;
+    AudioSource sfx;
+
     private void Awake()
     {
         canPickUpP1 = false;
         canPickUpP2 = false;
+        sfx = GameObject.Find("sfx").GetComponent<AudioSource>();
     }
     private void Start()
     {
@@ -53,11 +56,13 @@ public class CarPart : MonoBehaviour
         {
             this.transform.SetParent(player1.transform);
             canPickUpP1 = false;
+            sfx.Play();
         }
         if (canPickUpP2 && Input.GetKeyDown(KeyCode.Space) && GameManager.phase == assembleSequence)
         {
             this.transform.SetParent(player2.transform);
             canPickUpP2 = false;
+            sfx.Play();
         }
     }
 }

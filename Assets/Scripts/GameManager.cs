@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static int score = 0;
     public static int phase = 0;
     public GameObject nextLevelBtn;
+    public static bool readyNext = false;
 
     private void Update()
     {
@@ -18,7 +20,18 @@ public class GameManager : MonoBehaviour
         {
             phase = 2;
             //show next level btn
-            nextLevelBtn.SetActive(true);
+            if (readyNext)
+            {
+                nextLevelBtn.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    SceneManager.LoadScene("Racing Scene_0508");
+                }
+            }
+            else
+            {
+                nextLevelBtn.SetActive(false);
+            }
         }
     }
 

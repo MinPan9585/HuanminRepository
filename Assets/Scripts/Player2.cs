@@ -27,4 +27,20 @@ public class Player2 : MonoBehaviour
             rb.AddForce(new Vector3(0, 0, -force) * Time.deltaTime);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("NextLevel"))
+        {
+            GameManager.readyNext = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("NextLevel"))
+        {
+            GameManager.readyNext = false;
+        }
+    }
 }
